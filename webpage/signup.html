@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Signup Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://d334lak5lb2pjo.cloudfront.net/wp-content/uploads/b2b-web-design-examples-min.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+            height: 100vh;
+            position: relative;
+        }
+
+        .top-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .title {
+            font-family: Algerian, sans-serif;
+            font-size: 40px;
+            color: #fff;
+            margin: 20px;
+        }
+
+        .top-right-links {
+            display: flex;
+        }
+
+        .top-right-links a {
+            text-decoration: none;
+            color: #fff;
+            margin-left: 20px;
+            font-family: "Bookman Old Style", sans-serif;
+        }
+
+        .signup-section {
+            width: 300px;
+            margin: 20px;
+            align-self: flex-end;
+        }
+
+        .signup-content {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .signup-content h2 {
+            font-family: Arial, sans-serif;
+            color: #007bff;
+        }
+
+        .signup-content p {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .signup-content input {
+            width: calc(100% - 20px);
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        .signup-content button {
+            width: calc(100% - 20px);
+            padding: 8px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .captcha-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .captcha-img {
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        .captcha-img img {
+            margin-right: 10px;
+        }
+
+        .refresh-btn {
+            background-color: #ccc;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+        }
+
+        .refresh-btn::before {
+            content: '\21bb';
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-section">
+        <div class="title">Signup Page</div>
+        <div class="top-right-links">
+            <a href="file:///C:/Users/manik/OneDrive/web%20site/index.html">Home</a>
+            <a href="file:///C:/Users/manik/OneDrive/web%20site/contact.html">Contact</a>
+            
+            <a href="file:///C:/Users/manik/OneDrive/web%20site/About.html">About</a>
+            <a href="file:///C:/Users/manik/OneDrive/web%20site/help.html">Help</a>
+        </div>
+    </div>
+
+    <div class="signup-section">
+        <div class="signup-content">
+            <h2>Sign Up Now</h2>
+            <form>
+                <p><input type="text" placeholder="Name"></p>
+                <p><input type="email" placeholder="Email"></p>
+                <p><input type="password" placeholder="Password"></p>
+                <p><input type="password" placeholder="Confirm Password"></p>
+                <p class="captcha-container">
+                    <span class="captcha-img" id="captchaImage">
+                        <!-- Captcha image will be displayed here -->
+                    </span>
+                    <button type="button" class="refresh-btn" onclick="generateCaptcha()"></button>
+                </p>
+                <p><input type="text" placeholder="Enter Captcha" id="captchaInput"></p>
+                <button type="submit">Create</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function generateCaptcha() {
+            var captcha = Math.random().toString(36).substring(2, 8).toUpperCase();
+            var captchaImg = document.getElementById('captchaImage');
+            captchaImg.innerHTML = `<img src="https://via.placeholder.com/150x50?text=${captcha}" alt="Captcha">`;
+        }
+        generateCaptcha();
+    </script>
+</body>
+
+</html>
